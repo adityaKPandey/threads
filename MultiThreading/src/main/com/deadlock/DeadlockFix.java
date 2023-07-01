@@ -1,10 +1,11 @@
 package com.deadlock;
 
-public class Deadlock {
+public class DeadlockFix {
 
   private Object objectA = new Object();
   private Object objectB = new Object();
 
+  //Fix deadlock :  accessing both lock objects in same order
   void a() {
     synchronized (objectA) {
       System.out.println("a : Print A");
@@ -15,9 +16,9 @@ public class Deadlock {
   }
 
   void b() {
-    synchronized (objectB) {
+    synchronized (objectA) {
       System.out.println(" b : Print B");
-      synchronized (objectA) {
+      synchronized (objectB) {
         System.out.println("b : Print A");
       }
     }
@@ -26,15 +27,13 @@ public class Deadlock {
 
   public static void main(String[] args) {
 
-    Deadlock a = new Deadlock();
+    DeadlockFix a = new DeadlockFix();
 
     Thread t1 = new Thread(() -> a.b(), "Thread A");
     Thread t2 = new Thread( () -> a.a(), "Thread B");
 
     t1.start();
     t2.start();
-    //t1.start(); // restarting a thread throws IllegalThreadStateException
-
 
   }
 
