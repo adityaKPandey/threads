@@ -1,4 +1,4 @@
-package com.pessimisticlocking;
+package com.pessimisticlocking.mutex;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

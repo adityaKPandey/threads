@@ -1,4 +1,4 @@
-package com.pessimisticlocking;
+package com.pessimisticlocking.mutex;
 
 import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
 import java.util.concurrent.ExecutorService;
