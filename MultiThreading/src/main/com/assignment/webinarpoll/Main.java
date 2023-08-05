@@ -1,5 +1,9 @@
 package com.assignment.webinarpoll;
 
+/*
+   Assignment in Linkedin Learning course :
+   https://www.linkedin.com/learning/advanced-java-threads/solution-webinar-polling-system?resume=false
+ */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
